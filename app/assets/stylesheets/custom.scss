@@ -1,0 +1,91 @@
+@import "bootstrap-sprockets"; 
+@import "bootstrap";
+
+/*colors*/
+$lavender: #E0BAD7;
+$pale-khaki: #E4E9B2;
+$light-blue: #66B3BA;
+$khaki: #E7E08B;
+$plum: #904C77;
+
+
+/*header*/
+header {
+    .container {
+        background-color: $plum;
+        width: inherit;
+        height: fit-content;
+    }
+    ul {
+        li {
+            text-align:center;
+            #Home {
+                &:hover {
+                box-shadow: 0 0 1em 0.5em $light-blue;
+                }
+            }
+            #Menu {
+                &:hover {
+                box-shadow: 0 0 1em 0.5em $light-blue;
+                }
+            }
+            .header-text {
+                font-size: 20px;
+                padding-top: 25px;
+                text-align: center;
+                &:hover {
+                    text-shadow: 0 0 1em 1em $light-blue;
+                }
+            }
+        }
+
+    }
+}
+
+/*site body*/
+body {
+    margin-top: 100px;
+    .container {
+        width: inherit;
+    }
+}
+
+
+
+/* footer */
+footer {
+    margin-top: 45px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: inherit;
+    border-top: 3px solid $lavender;
+    background-color: $plum;
+}
+
+
+/* debugging */
+@mixin box_sizing { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+.debug-dump {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 45px;
+    @include box_sizing;
+}
+
+#error_explanation {
+    color: red; ul {
+    color: red;
+    margin: 0 0 30px 0; }
+    }
+    
+.field_with_errors { @extend .has-error; 
+    .form-control {
+    color: $state-danger-text; 
+}
+    }
