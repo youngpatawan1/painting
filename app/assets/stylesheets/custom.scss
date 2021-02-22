@@ -15,36 +15,35 @@ header {
         background-color: $plum;
         width: inherit;
         height: fit-content;
-    }
-    ul {
-        li {
-            text-align:center;
-            #Home {
-                &:hover {
-                box-shadow: 0 0 1em 0.5em $light-blue;
-                }
-            }
-            #Menu {
-                &:hover {
-                box-shadow: 0 0 1em 0.5em $light-blue;
-                }
-            }
-            .header-text {
-                font-size: 20px;
-                padding-top: 25px;
-                text-align: center;
-                &:hover {
-                    text-shadow: 0 0 1em 1em $light-blue;
-                }
-            }
+        #home-logo {
+            margin-top: 10px;
         }
+        nav {
+        ul {
+            padding-top: 5px;
+            text-align: center;
+            .nav-link {
+                font-size: 20px;
+                a {
+                color: $lavender;
+                &:hover {
+                    color: $light-blue
+                }
+            }
+            }
+            #profile-btn {
+                padding-left:1em;
+            }
 
+        }
+    }
     }
 }
 
 /*site body*/
 body {
-    margin-top: 100px;
+    margin-top: 80px;
+    background-color: $khaki;
     .container {
         width: inherit;
     }

@@ -1,13 +1,32 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+
+
 <div class="container">
-<ul class = "nav navbar-nav navbar-left">
-<li><%= link_to image_tag("home_icon.svg", width: "45", alt: "home icon"), root_path, id: "Home"%></li>
+<a id="home-logo", href = '<%=root_path%>', class="navbar-left">
+      <%= image_tag('home_icon.svg', alt: 'module selector', width: '40') %>
+</a>
+<nav>   
+<ul class="nav navbar-nav navbar-right"> 
+<li class="nav-link" >
+    <%= link_to "About", '#'%>
+</li>
+<% if logged_in? %>
+<a id="discover-btn", href = '#'>
+      <%= image_tag('compass.svg', width: '35') %>
+</a>
+<a id="profile-btn", href = '#',class="btn dropdown-toggle" data-toggle="dropdown">
+      <%= image_tag('menu.svg', width: '40') %>
+      <span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+    <li><%= link_to "Profile", current_user %></li> 
+    <li><%= link_to "Settings", '#' %></li>
+    <li class="divider"></li>
+    <li><%= link_to "Log out", logout_path, method: :delete %> </li>
+</ul> 
+</li>
+<% else %>
+<li><%= link_to "Log in", login_path %></li>
+<% end %> 
 </ul>
-<nav>
-<ul class="nav navbar-nav navbar-right">
-<li><%= link_to "Discover", "#", class: "header-text"%></li>
-<li><%= link_to image_tag("menu.svg", width: "45", alt: "menu icon"), "https://www.linkedin.com/in/patrickruan/", id: "Menu" %></li>
-</ul>
-</nav>
+</nav> 
 </div>
-</header>
